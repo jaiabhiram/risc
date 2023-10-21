@@ -1,0 +1,159 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Fri Nov  4 01:34:33 2022
+| Host         : DESKTOP-NCGT06D running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_riscv_control_sets_placed.rpt
+| Design       : top_riscv
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    81 |
+|    Minimum number of control sets                        |    81 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    15 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    81 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    79 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              67 |           36 |
+| No           | No                    | Yes                    |              79 |           28 |
+| No           | Yes                   | No                     |              31 |            8 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |            2368 |         1041 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+----------------------------------------------+------------------------+------------------+----------------+
+|   Clock Signal   |                 Enable Signal                |    Set/Reset Signal    | Slice Load Count | Bel Load Count |
++------------------+----------------------------------------------+------------------------+------------------+----------------+
+| ~alu_op[2]       |                                              |                        |                1 |              1 |
+|  clk_IBUF_BUFG   |                                              |                        |                1 |              2 |
+|  clk_IBUF_BUFG   |                                              | s1/counter[31]_i_1_n_2 |                8 |             31 |
+|  clk_IBUF_BUFG   | s4/one_second_enable                         | reset_IBUF             |               19 |             32 |
+|  clk_slow_t_BUFG |                                              | reset_IBUF             |               16 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[63][31]_i_9_0[0] | reset_IBUF             |                9 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[63][31]_i_7_0[0] | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[63][31]_i_5_0[0] | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/E[0]                           | reset_IBUF             |               14 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_10[0]                | reset_IBUF             |               10 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_13[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_14[0]                | reset_IBUF             |               19 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_19[0]                | reset_IBUF             |               12 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_12[0]                | reset_IBUF             |               10 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[2]_4[0]                 | reset_IBUF             |                8 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[2]_3[0]                 | reset_IBUF             |               18 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_15[0]                | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_3[0]                 | reset_IBUF             |               16 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_4[0]                 | reset_IBUF             |               11 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_1[0]                 | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_16[0]                | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_17[0]                | reset_IBUF             |               16 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_18[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_11[0]                | reset_IBUF             |               10 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_20[0]                | reset_IBUF             |               14 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_5[0]                 | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_6[0]                 | reset_IBUF             |               12 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_7[0]                 | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_8[0]                 | reset_IBUF             |               12 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_23[0]                | reset_IBUF             |               12 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_26[0]                | reset_IBUF             |               16 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_41[0]                | reset_IBUF             |               16 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_2[0]                 | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[3]_9[0]                 | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_16[0]                | reset_IBUF             |               14 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_40[0]                | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_1[0]                 | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_33[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[4]_2[0]                 | reset_IBUF             |               17 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_11[0]                | reset_IBUF             |               16 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_27[0]                | reset_IBUF             |               12 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_31[0]                | reset_IBUF             |               14 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_14[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_18[0]                | reset_IBUF             |               12 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_20[0]                | reset_IBUF             |               22 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_25[0]                | reset_IBUF             |               12 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_19[0]                | reset_IBUF             |               19 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_3[0]                 | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_30[0]                | reset_IBUF             |                9 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_24[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_28[0]                | reset_IBUF             |               18 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_32[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_21[0]                | reset_IBUF             |               16 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_35[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_17[0]                | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_37[0]                | reset_IBUF             |               16 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_38[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_12[0]                | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_42[0]                | reset_IBUF             |               17 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_43[0]                | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_45[0]                | reset_IBUF             |                7 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_46[0]                | reset_IBUF             |               24 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[4]_3[0]                 | reset_IBUF             |               19 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_13[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_29[0]                | reset_IBUF             |               15 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_34[0]                | reset_IBUF             |               14 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_39[0]                | reset_IBUF             |               14 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_4[0]                 | reset_IBUF             |               14 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_36[0]                | reset_IBUF             |               13 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_44[0]                | reset_IBUF             |               22 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[29][31]_i_3_0[0] | reset_IBUF             |               10 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[45][31]_i_3_0[0] | reset_IBUF             |               11 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[61][31]_i_4_1[0] | reset_IBUF             |               12 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[29][31]_i_3_1[0] | reset_IBUF             |               10 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[45][31]_i_3_2[0] | reset_IBUF             |               18 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[61][31]_i_4_0[0] | reset_IBUF             |               14 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/data_mem_file[45][31]_i_3_1[0] | reset_IBUF             |               13 |             32 |
+|  n_1_4475_BUFG   |                                              |                        |               15 |             32 |
+|  n_0_2096_BUFG   |                                              |                        |               19 |             32 |
+|  clk_slow_t_BUFG | rv/dp/pc_inst/PC_reg[6]_22[0]                | reset_IBUF             |               13 |             32 |
+|  clk_IBUF_BUFG   |                                              | reset_IBUF             |               12 |             47 |
++------------------+----------------------------------------------+------------------------+------------------+----------------+
+
+
